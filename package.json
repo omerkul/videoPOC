@@ -2,6 +2,7 @@
   "name": "video-poc",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://omerkul.github.io/videoPOC",
   "dependencies": {
     "@types/react": "^18.3.23",
     "@types/react-dom": "^18.3.7",
@@ -17,7 +18,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -39,6 +42,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
+    "gh-pages": "^4.0.0",
     "postcss": "^8.4.24",
     "tailwindcss": "^3.3.0"
   },
