@@ -185,43 +185,6 @@ const Phase2Section: React.FC = () => {
     }
   ];
 
-  const multiUserAnalysisData = [
-    {
-      criterion: 'Quality of "Business Flow" Identification',
-      description: 'Finding meaningful business tasks',
-      gemini: 'Excellent. The labels describe clear business objectives like "Search for Customer in Flex Terminal" or "Update Financial Figures in CDM PROD". The summaries narrate a logical business process from start to finish.',
-      gpt: 'Poor. The labels describe generic, low-level actions like "Copy data within Excel" or "Navigate and click controls in ABSA Web App". These are not business flows; they are descriptions of UI interactions without capturing the user\'s intent.',
-      winner: 'Gemini'
-    },
-    {
-      criterion: 'Cross-Application Pattern Detection',
-      description: 'Finding sequences that span multiple apps',
-      gemini: 'Excellent. This is the model\'s key strength. Almost every pattern identified is a cross-application workflow. Example: "Search for Customer Identity..." correctly traces a user\'s journey from View Application to SMAPP to XDS. This is a perfect example of what was requested.',
-      gpt: 'Poor. Most patterns are confined to a single application (processname is the same throughout the sequence, e.g., "Excel", "Outlook"). The few that hint at a cross-app flow are generic OS interactions, not a meaningful transfer of data between business systems.',
-      winner: 'Gemini'
-    },
-    {
-      criterion: 'Semantic Richness & Context',
-      description: 'Providing useful context and data',
-      gemini: 'Excellent. The pattern_sequence_summary is a human-readable narrative of the task. The variation_notes are insightful, explaining why different sequences were grouped (e.g., "The source application varies... The destination application also varies... The core task... is consistent"). The example_sequence is rich with data, including the actual text copied ("VINCENT NTSHOLO", "11,000") and specific window titles.',
-      gpt: 'Poor. The pattern_sequence_summary is a simplistic, mechanical list of actions ("Click... Copy... Click..."). The variation_notes are generic and repetitive ("Minor timing/order differences..."). The example_sequence data is sparse. The text field is almost always null, and target_element identifiers are often empty, removing crucial context.',
-      winner: 'Gemini'
-    },
-    {
-      criterion: 'Grouping & Fuzzy Matching',
-      description: 'Grouping semantically similar but non-identical sequences',
-      gemini: 'Excellent. The model demonstrates sophisticated grouping. The "Copy Case/Customer Details" pattern correctly groups sequences where the source could be CDM, BTP, or View Application, and the destination could be Word, Excel, or Sticky Notes. It understood the semantic intent was the same.',
-      gpt: 'Poor. The grouping is very literal and surface-level. It found patterns like "Copy data within Excel" and "Copy data within Outlook" as separate items. It failed to identify a higher-level, more abstract pattern about copying data for a specific purpose.',
-      winner: 'Gemini'
-    },
-    {
-      criterion: 'Actionability & Usefulness',
-      description: 'Providing results a business could act on',
-      gemini: 'High. A business analyst can immediately understand the workflows and identify automation opportunities. For example, the "Update Financial Figures..." pattern (copy once, paste three times) is a prime candidate for automation. The results are clear and directly usable.',
-      gpt: 'Low. The findings are not actionable. Knowing a user "Clicks a button in Outlook" or "Copies data in Excel" provides no insight into the business process being performed or how to improve it. An analyst would have to ask, "What data? For what purpose?"',
-      winner: 'Gemini'
-    }
-  ];
 
   const containerVariants = {
     hidden: { opacity: 0 },

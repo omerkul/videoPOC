@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Rocket, CheckCircle, TrendingUp } from 'lucide-react';
+import { Rocket, CheckCircle } from 'lucide-react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 
 const ConclusionSection: React.FC = () => {

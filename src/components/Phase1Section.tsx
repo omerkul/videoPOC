@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Brain, Target, Filter, Video, MousePointer, Ghost, Award, Play, Image, Zap, Camera, Copy, Clock, Globe } from 'lucide-react';
+import { Brain, Award, Play, Image, Camera, Copy, Clock } from 'lucide-react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import { ComparisonData } from '../types';
 
@@ -34,11 +34,6 @@ const Phase1Section: React.FC = () => {
     { feature: 'Alignment with Ground Truth', geminiPro: 'High', competitor: 'Poor to nonexistent', winner: 'Gemini Pro' },
   ];
 
-  const scenarios = [
-    'Creating a contact in Training CRM Windows application',
-    'Debt collection task with email template and copy/paste',
-    'Travel booking: Skyscanner planning + Salesforce updates'
-  ];
 
   const containerVariants = {
     hidden: { opacity: 0 },

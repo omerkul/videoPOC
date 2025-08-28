@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Users, Clock, Star, AlertTriangle, CheckCircle, Target, Award, TrendingDown } from 'lucide-react';
+import { Users, Clock, Star, AlertTriangle, Target, Award, TrendingDown } from 'lucide-react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 
 const Phase3Section4: React.FC = () => {
